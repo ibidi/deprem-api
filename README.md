@@ -34,6 +34,13 @@ Modern, web tabanlı deprem takip sistemi. AFAD ve Kandilli Rasathanesi verileri
 - 📱 **Responsive**: Mobil uyumlu tasarım
 - 🚀 **Next.js 16**: En son Next.js sürümü
 - 📈 **İstatistikler**: Gerçek zamanlı deprem istatistikleri
+- 🚨 **Erken Uyarı Sistemi**: 
+  - Otomatik büyük deprem tespiti (4.0+)
+  - Tarayıcı bildirimleri
+  - Tahmini varış süresi hesaplama
+  - Etkilenebilecek şehirler listesi
+  - Kullanıcı konumuna özel uyarılar
+  - Her 30 saniyede otomatik kontrol
 - 🎯 **Açık Kaynak**: MIT lisansı ile tamamen ücretsiz
 
 ## 🚀 Kurulum

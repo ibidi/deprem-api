@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Earthquake, SourceType } from '@/lib/types';
+import EarlyWarningPanel from '@/components/EarlyWarningPanel';
 
 export default function Home() {
   const [earthquakes, setEarthquakes] = useState<Earthquake[]>([]);
@@ -109,6 +110,34 @@ export default function Home() {
             AFAD ve Kandilli Rasathanesi verilerine dayalı gerçek zamanlı deprem takibi
           </p>
         </header>
+
+        {/* Early Warning Banner */}
+        {earthquakes.length > 0 && earthquakes.some(eq => {
+          const magnitude = getMagnitude(eq);
+          const isRecent = Date.now() - eq.timestamp * 1000 < 5 * 60 * 1000;
+          return magnitude >= 4.0 && isRecent;
+        }) && (
+          <div className="mb-6 bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl p-6 text-white shadow-2xl animate-pulse">
+            <div className="flex items-start gap-4">
+              <div className="text-4xl">🚨</div>
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold mb-2">ERKEN UYARI!</h3>
+                <p className="text-lg mb-3">
+                  Son 5 dakika içinde 4.0+ büyüklüğünde deprem tespit edildi!
+                </p>
+                <div className="bg-white/20 rounded-lg p-3 text-sm">
+                  <p className="font-semibold">⚠️ Öneriler:</p>
+                  <ul className="list-disc list-inside mt-2 space-y-1">
+                    <li>Sakin olun ve panik yapmayın</li>
+                    <li>Güvenli bir alana geçin</li>
+                    <li>Artçı sarsıntılara hazırlıklı olun</li>
+                    <li>Acil durum çantanızı hazır bulundurun</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Quick Stats */}
         {earthquakes.length > 0 && (
@@ -545,6 +574,9 @@ export default function Home() {
           </div>
         </footer>
       </div>
+
+      {/* Early Warning Panel */}
+      <EarlyWarningPanel />
     </div>
   );
 }
