@@ -1,6 +1,14 @@
 # 🌍 Deprem Takip Sistemi - Next.js 16
 
+![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?style=for-the-badge&logo=tailwind-css)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-red?style=for-the-badge)
+
 Modern, web tabanlı deprem takip sistemi. AFAD ve Kandilli Rasathanesi verilerini kullanarak gerçek zamanlı deprem bilgilerini sunar.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ibidi/deprem-api)
 
 ## ✨ Özellikler
 
